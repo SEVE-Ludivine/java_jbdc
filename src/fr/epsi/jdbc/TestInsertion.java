@@ -17,7 +17,7 @@ public class TestInsertion {
         //f.insert(new Fournisseur("La maison de la peinture2", 15));
 
         //Il faut mettre 2 fois ' pour que ca puisse rentrer dans la base de données
-        f.insert(new Fournisseur("COUCOU", 15));
+        f.insert(new Fournisseur("Tst'apostrophe", 15));
 
     }
 }

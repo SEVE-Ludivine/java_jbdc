@@ -17,9 +17,7 @@ public class FournisseurDaoJdbc implements FournisseurDao {
     public List<Fournisseur> extraire() {
         ResourceBundle bundle = ResourceBundle.getBundle( "database" );
         List<Fournisseur> fournisseurs = new ArrayList<Fournisseur>();
-        try (Connection connection =DriverManager
-                .getConnection( bundle.getString( "db.url" ), bundle.getString( "db.user" ), bundle
-                        .getString( "db.password" ));
+        try (Connection connection = PersistenceManager.getConnection();
              Statement st = connection.createStatement();
              ResultSet rs = st.executeQuery( "SELECT * FROM fournisseur" )
         ) {
