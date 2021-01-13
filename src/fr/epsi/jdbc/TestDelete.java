@@ -1,5 +1,6 @@
 package fr.epsi.jdbc;
 
+import fr.epsi.jdbc.dal.PersistenceManager;
 import fr.epsi.jdbc.dao.FournisseurDaoJdbc;
 import fr.epsi.jdbc.entites.Fournisseur;
 
@@ -15,5 +16,11 @@ public class TestDelete {
 
         FournisseurDaoJdbc f = new FournisseurDaoJdbc();
         boolean b = f.delete(new Fournisseur("COUCOU 2", 15));
+
+        try {
+            PersistenceManager.closeConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

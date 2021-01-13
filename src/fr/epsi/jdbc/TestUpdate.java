@@ -1,5 +1,6 @@
 package fr.epsi.jdbc;
 
+import fr.epsi.jdbc.dal.PersistenceManager;
 import fr.epsi.jdbc.dao.FournisseurDaoJdbc;
 import fr.epsi.jdbc.entites.Fournisseur;
 
@@ -14,5 +15,13 @@ public class TestUpdate {
 
         FournisseurDaoJdbc f = new FournisseurDaoJdbc();
         f.update("COUCOU", "COUCOU 2");
+
+
+        try { //On ferme la connexion a la fin de l'application
+            PersistenceManager.closeConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
     }
 }

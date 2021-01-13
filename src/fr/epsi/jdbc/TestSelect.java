@@ -1,5 +1,6 @@
 package fr.epsi.jdbc;
 
+import fr.epsi.jdbc.dal.PersistenceManager;
 import fr.epsi.jdbc.dao.FournisseurDaoJdbc;
 import fr.epsi.jdbc.entites.Fournisseur;
 
@@ -48,5 +49,12 @@ public class TestSelect {
         {
             System.out.println(four.id+" "+ four.nom);
         }
+
+        try {
+            PersistenceManager.closeConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
     }
 }

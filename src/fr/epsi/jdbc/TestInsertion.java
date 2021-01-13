@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
+import fr.epsi.jdbc.dal.PersistenceManager;
 import fr.epsi.jdbc.dao.FournisseurDao;
 import fr.epsi.jdbc.dao.FournisseurDaoJdbc;
 import fr.epsi.jdbc.entites.Fournisseur;
@@ -18,6 +19,12 @@ public class TestInsertion {
 
         //Il faut mettre 2 fois ' pour que ca puisse rentrer dans la base de données
         f.insert(new Fournisseur("Tst'apostrophe", 15));
+
+        try {
+            PersistenceManager.closeConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
     }
 }
