@@ -11,25 +11,13 @@ import fr.epsi.jdbc.dao.FournisseurDaoJdbc;
 import fr.epsi.jdbc.entites.Fournisseur;
 
 public class TestInsertion {
-    public static void main(String[] args) {
-/*
-        ResourceBundle bundle = ResourceBundle.getBundle( "database" );
-        try (Connection connection = DriverManager.getConnection(bundle.getString("db.url"), bundle.getString("db.user"),
-                bundle.getString("db.password"));
-             Statement st = connection.createStatement();
-        ) {
-            int nb = st.executeUpdate( "INSERT INTO fournisseur (NOM) VALUES ('La maison de la Peinture')" );
-            System.out.println(nb);
-        } catch ( SQLException e ) {
-            e.printStackTrace();
-        } catch ( Exception e ) {
-            e.printStackTrace();
-        }
-        System.out.println("fin");*/
-
+    public static void main(String[] args) throws SQLException {
 
         FournisseurDaoJdbc f = new FournisseurDaoJdbc();
-        f.insert(new Fournisseur("La maison de la peinture2", 15));
+        //f.insert(new Fournisseur("La maison de la peinture2", 15));
+
+        //Il faut mettre 2 fois ' pour que ca puisse rentrer dans la base de données
+        f.insert(new Fournisseur("COUCOU", 15));
 
     }
 }

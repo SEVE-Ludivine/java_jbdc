@@ -10,23 +10,9 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class TestUpdate {
-    public static void main(String[] args) {
-/*
-        ResourceBundle bundle = ResourceBundle.getBundle( "database" );
-        try (Connection connection = DriverManager.getConnection(bundle.getString("db.url"), bundle.getString("db.user"),
-                bundle.getString("db.password"));
-             Statement st = connection.createStatement();
-        ) {
-            int nb = st.executeUpdate( "UPDATE fournisseur SET nom='La maison des Peintures' WHERE nom = 'La maison de la Peinture'" );
-            System.out.println(nb);
-        } catch ( SQLException e ) {
-            e.printStackTrace();
-        } catch ( Exception e ) {
-            e.printStackTrace();
-        }
-        System.out.println("fin");*/
+    public static void main(String[] args) throws SQLException {
 
         FournisseurDaoJdbc f = new FournisseurDaoJdbc();
-        f.update("La maison de la peinture2", "La maison des peintures 2");
+        f.update("COUCOU", "COUCOU 2");
     }
 }
