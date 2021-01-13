@@ -1,14 +1,8 @@
 package fr.epsi.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ResourceBundle;
 
 import fr.epsi.jdbc.dal.PersistenceManager;
-import fr.epsi.jdbc.dao.FournisseurDao;
-import fr.epsi.jdbc.dao.FournisseurDaoJdbc;
 import fr.epsi.jdbc.entites.Fournisseur;
 
 public class TestInsertion {
@@ -23,7 +17,7 @@ public class TestInsertion {
         try {
             PersistenceManager.closeConnection();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            System.out.println("Attention, je n'ai pas pu fermer la connexion");
         }
 
     }

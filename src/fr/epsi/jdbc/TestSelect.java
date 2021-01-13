@@ -1,13 +1,10 @@
 package fr.epsi.jdbc;
 
 import fr.epsi.jdbc.dal.PersistenceManager;
-import fr.epsi.jdbc.dao.FournisseurDaoJdbc;
 import fr.epsi.jdbc.entites.Fournisseur;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class TestSelect {
     public static void main(String[] args) {
@@ -53,7 +50,7 @@ public class TestSelect {
         try {
             PersistenceManager.closeConnection();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            System.out.println("Attention, je n'ai pas pu fermer la connexion");
         }
 
     }

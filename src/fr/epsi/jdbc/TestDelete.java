@@ -1,15 +1,9 @@
 package fr.epsi.jdbc;
 
 import fr.epsi.jdbc.dal.PersistenceManager;
-import fr.epsi.jdbc.dao.FournisseurDaoJdbc;
 import fr.epsi.jdbc.entites.Fournisseur;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class TestDelete {
     public static void main(String[] args) throws SQLException {
@@ -20,7 +14,7 @@ public class TestDelete {
         try {
             PersistenceManager.closeConnection();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            System.out.println("Attention, je n'ai pas pu fermer la connexion");
         }
     }
 }

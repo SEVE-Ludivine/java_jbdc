@@ -1,6 +1,7 @@
-package fr.epsi.jdbc.dao;
+package fr.epsi.jdbc;
 
 import fr.epsi.jdbc.dal.PersistenceManager;
+import fr.epsi.jdbc.dao.FournisseurDao;
 import fr.epsi.jdbc.entites.Fournisseur;
 
 import java.sql.*;
